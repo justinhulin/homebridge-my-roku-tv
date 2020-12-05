@@ -1,0 +1,50 @@
+{
+  "displayName": "My Roku Tv HomeBridge",
+  "name": "homebridge-my-roku-tv-plugin",
+  "version": "1.0.0",
+  "description": "Full Roku Tv Support for HomeKit Television",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/justinhulin/homebridge-my-roku-tv.git"
+  },
+  "bugs": {
+    "url": "https://github.com/justinhulin/homebridge-my-roku-tv/issues"
+  },
+  "engines": {
+    "node": ">=10.17.0",
+    "homebridge": ">0.4.53"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "eslint src/**.ts",
+    "lint:fix": "eslint --fix src/**.ts ",
+    "watch": "npm run build && npm link && nodemon",
+    "build": "rimraf ./dist && tsc",
+    "prepublishOnly": "npm run lint && npm run build"
+  },
+  "keywords": [
+    "homebridge-plugin",
+    "roku",
+    "roku-tv",
+    "roku tv",
+    "homebridge"
+  ],
+  "dependencies": {
+    "roku-client": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.13.6",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "homebridge": "^1.0.5-beta.13",
+    "nodemon": "^2.0.4",
+    "prettier": "2.0.5",
+    "rimraf": "^3.0.2",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.9.2"
+  }
+}
